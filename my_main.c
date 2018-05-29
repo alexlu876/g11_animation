@@ -66,11 +66,31 @@
   to some default value, and print out a message
   with the name being used.
   ====================*/
+int num_frames;
+char name[128];
 void first_pass() {
   //in order to use name and num_frames throughout
   //they must be extern variables
-  extern int num_frames;
-  extern char name[128];
+  //extern int num_frames;
+  //extern char name[128];
+  num_frames = 1;
+  
+  int var;
+  var = 0;
+
+  int i;
+  for(i = 0; i < lastop; i++){
+
+    if(op[i].opcode == FRAMES){
+      num_frames = op[i].op.frames.num_frames;
+    }
+    else if(op[i].opcode == BASENAME){
+      strcpy(name, op[i].op.basename.p->name);
+    }
+    else if(op[i].opcode == VARY && var == 0){
+      var = 1;
+    }
+  }
 
 }
 
@@ -94,7 +114,39 @@ void first_pass() {
   appropirate value.
   ====================*/
 struct vary_node ** second_pass() {
-  return NULL;
+  int start;
+  int end;
+  double sval;
+  double eval;
+  double d;
+  char name[128];
+  struct vary_node ** knobs = malloc(num_frames * sizeof(struct vary_node));
+  int i;
+  
+  for(i = 0; i < lastop; i++){
+    if(op[i].opcode == VARY){
+      start = op[i].op.vary.start_frame;
+      end = op[i].op.vary.end_frame;
+      sval = op[i].op.vary.start_val;
+      eval = op[i].op.vary.end_val;
+
+      strcpy(name, op[i].op.vary.p->name);
+      d = (eval - sval) / (end - start);
+      int j;
+
+      for(j = start; j <= end; j++){
+        struct vary_node * now = malloc(sizeof(struct vary_node));
+        strcpy(now->name, name);
+        now->value = sval + d * (j - start);
+        now->next = knobs[j];
+        knobs[j] = now;
+      }
+    }
+  }
+  //print_knobs(); i want to die ahhhh
+  //print_knobs();
+
+  return knobs;
 }
 
 /*======== void print_knobs() ==========
@@ -202,6 +254,18 @@ void my_main() {
   clear_screen( t );
   clear_zbuffer(zb);
 
+  first_pass();
+
+  if(num_frames > 1){
+    struct vary_node ** knobs = second_pass();
+    int iii;
+
+    for(iii = 0; iii < num_frames; iii++){
+      struct vary_node * now = knobs[iii];
+      while(now){
+        set_value(lookup_symbol(now->name), now->value);
+        now = now->next;
+      }
   for (i=0;i<lastop;i++) {
     //printf("%d: ",i);
     switch (op[i].opcode)
@@ -372,4 +436,6 @@ void my_main() {
       } //end opcode switch
     printf("\n");
   }//end operation loop
+    }
+  }
 }
