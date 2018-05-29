@@ -256,7 +256,7 @@ void my_main() {
 
   first_pass();
 
-  if(num_frames > 1){
+  //if(num_frames > 1){
     struct vary_node ** knobs = second_pass();
     int framec;
 
@@ -454,7 +454,7 @@ void my_main() {
     tmp=new_matrix(4,1000);
   }//end for loop for all frames
   make_animation(name);
-  }
+  /*
   else{
 
 printf("num frames = 1\n");
@@ -629,4 +629,5 @@ printf("num frames = 1\n");
       printf("\n");
     }//end operation loop
 }
+*/
 }
