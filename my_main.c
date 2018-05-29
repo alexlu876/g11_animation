@@ -276,10 +276,7 @@ void my_main() {
     switch (op[i].opcode)
       {
       case SPHERE:
-        /* printf("Sphere: %6.2f %6.2f %6.2f r=%6.2f", */
-        /* 	 op[i].op.sphere.d[0],op[i].op.sphere.d[1], */
-        /* 	 op[i].op.sphere.d[2], */
-        /* 	 op[i].op.sphere.r); */
+
         if (op[i].op.sphere.constants != NULL)
           {
             //printf("\tconstants: %s",op[i].op.sphere.constants->name);
@@ -298,10 +295,7 @@ void my_main() {
         tmp->lastcol = 0;
         break;
       case TORUS:
-        /* printf("Torus: %6.2f %6.2f %6.2f r0=%6.2f r1=%6.2f", */
-        /* 	 op[i].op.torus.d[0],op[i].op.torus.d[1], */
-        /* 	 op[i].op.torus.d[2], */
-        /* 	 op[i].op.torus.r0,op[i].op.torus.r1); */
+
         if (op[i].op.torus.constants != NULL)
           {
             //printf("\tconstants: %s",op[i].op.torus.constants->name);
@@ -321,11 +315,7 @@ void my_main() {
         tmp->lastcol = 0;
         break;
       case BOX:
-        /* printf("Box: d0: %6.2f %6.2f %6.2f d1: %6.2f %6.2f %6.2f", */
-        /* 	 op[i].op.box.d0[0],op[i].op.box.d0[1], */
-        /* 	 op[i].op.box.d0[2], */
-        /* 	 op[i].op.box.d1[0],op[i].op.box.d1[1], */
-        /* 	 op[i].op.box.d1[2]); */
+ 
         if (op[i].op.box.constants != NULL)
           {
             //printf("\tconstants: %s",op[i].op.box.constants->name);
@@ -345,11 +335,7 @@ void my_main() {
         tmp->lastcol = 0;
         break;
       case LINE:
-        /* printf("Line: from: %6.2f %6.2f %6.2f to: %6.2f %6.2f %6.2f",*/
-        /* 	 op[i].op.line.p0[0],op[i].op.line.p0[1], */
-        /* 	 op[i].op.line.p0[1], */
-        /* 	 op[i].op.line.p1[0],op[i].op.line.p1[1], */
-        /* 	 op[i].op.line.p1[1]); */
+
         if (op[i].op.line.constants != NULL)
           {
             //printf("\n\tConstants: %s",op[i].op.line.constants->name);
@@ -463,10 +449,7 @@ printf("num frames = 1\n");
       switch (op[i].opcode)
         {
         case SPHERE:
-          /* printf("Sphere: %6.2f %6.2f %6.2f r=%6.2f", */
-          /* 	 op[i].op.sphere.d[0],op[i].op.sphere.d[1], */
-          /* 	 op[i].op.sphere.d[2], */
-          /* 	 op[i].op.sphere.r); */
+   
           if (op[i].op.sphere.constants != NULL)
             {
               //printf("\tconstants: %s",op[i].op.sphere.constants->name);
@@ -485,10 +468,7 @@ printf("num frames = 1\n");
           tmp->lastcol = 0;
           break;
         case TORUS:
-          /* printf("Torus: %6.2f %6.2f %6.2f r0=%6.2f r1=%6.2f", */
-          /* 	 op[i].op.torus.d[0],op[i].op.torus.d[1], */
-          /* 	 op[i].op.torus.d[2], */
-          /* 	 op[i].op.torus.r0,op[i].op.torus.r1); */
+ 
           if (op[i].op.torus.constants != NULL)
             {
               //printf("\tconstants: %s",op[i].op.torus.constants->name);
@@ -508,11 +488,7 @@ printf("num frames = 1\n");
           tmp->lastcol = 0;
           break;
         case BOX:
-          /* printf("Box: d0: %6.2f %6.2f %6.2f d1: %6.2f %6.2f %6.2f", */
-          /* 	 op[i].op.box.d0[0],op[i].op.box.d0[1], */
-          /* 	 op[i].op.box.d0[2], */
-          /* 	 op[i].op.box.d1[0],op[i].op.box.d1[1], */
-          /* 	 op[i].op.box.d1[2]); */
+
           if (op[i].op.box.constants != NULL)
             {
               //printf("\tconstants: %s",op[i].op.box.constants->name);
@@ -532,11 +508,7 @@ printf("num frames = 1\n");
           tmp->lastcol = 0;
           break;
         case LINE:
-          /* printf("Line: from: %6.2f %6.2f %6.2f to: %6.2f %6.2f %6.2f",*/
-          /* 	 op[i].op.line.p0[0],op[i].op.line.p0[1], */
-          /* 	 op[i].op.line.p0[1], */
-          /* 	 op[i].op.line.p1[0],op[i].op.line.p1[1], */
-          /* 	 op[i].op.line.p1[1]); */
+  
           if (op[i].op.line.constants != NULL)
             {
               //printf("\n\tConstants: %s",op[i].op.line.constants->name);
