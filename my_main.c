@@ -264,7 +264,7 @@ void my_main() {
       struct vary_node * now = knobs[framec];
       
       while(now){
-        if (!lookup_symbol(now->now))
+        if (!lookup_symbol(now->name))
         	add_symbol(now->name, SYM_VALUE, &(now->value));
       else{
 	      set_value(lookup_symbol(now->name),now->value);
