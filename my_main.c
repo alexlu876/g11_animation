@@ -258,10 +258,10 @@ void my_main() {
 
   if(num_frames > 1){
     struct vary_node ** knobs = second_pass();
-    int iii;
+    int framec;
 
-    for(iii = 0; iii < num_frames; iii++){
-      struct vary_node * now = knobs[iii];
+    for(framec = 0; framec < num_frames; framec++){
+      struct vary_node * now = knobs[framec];
       while(now){
         set_value(lookup_symbol(now->name), now->value);
         now = now->next;
