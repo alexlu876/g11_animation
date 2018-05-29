@@ -256,7 +256,7 @@ void my_main() {
 
   first_pass();
 
-  //if(num_frames > 1){
+ if(num_frames > 1){
     struct vary_node ** knobs = second_pass();
     int framec;
 
