@@ -442,7 +442,7 @@ void my_main() {
     printf("\n");
   }//end operation loop
   char name2[128];
-  sprintf(name2, "anim/%s_anim%03d.png", name, iii);
+  sprintf(name2, "anim/%s_anim%03d.png", name, framec);
   save_extension(t, name2);
   clear_screen(t);
   clear_zbuffer(zb);
