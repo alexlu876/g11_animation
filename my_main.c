@@ -436,6 +436,35 @@ void my_main() {
       } //end opcode switch
     printf("\n");
   }//end operation loop
+  char name2[128];
+  sprintf(name2, "anim/%s_anim%03d.png", name, iii);
+  save_extension(t, name2);
+  clear_screen(t);
+  clear_zbuffer(zb);
+  systems = new_stack();
+  tmp = new_matrix(4, 1001);
     }
+    make_animation(name);
+    free(knobs);
+
   }
+  
+  else{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
