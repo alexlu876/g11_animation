@@ -449,7 +449,7 @@ void my_main() {
     tmp=new_matrix(4,1000);
   }//end for loop for all frames
   make_animation(name);
-
+ }
   else{
 
 printf("num frames = 1\n");
@@ -610,5 +610,5 @@ printf("num frames = 1\n");
       printf("\n");
     }//end operation loop
 }
- }
+ 
 }
