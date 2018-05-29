@@ -271,6 +271,8 @@ void my_main() {
         now=now->next;
       }
     }
+    printf("\n[frame %d] printing knobs \n", framec);
+    print_knobs();
   for (i=0;i<lastop;i++) {
     //printf("%d: ",i);
     switch (op[i].opcode)
