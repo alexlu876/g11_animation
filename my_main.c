@@ -433,7 +433,7 @@ void my_main() {
     char name2[12+strlen(name)];
 
     sprintf(name2, "anim/%s%03d.png", name, framec);
-
+    display(t);
     
     save_extension(t,name2);
     clear_screen(t);
