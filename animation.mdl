@@ -8,6 +8,7 @@ box 0 0 0 500 2 2
 push
 box 0 250 0 500 251 2
 //rotation boxes
+push
 box 0 0 0 50 250 2
 box 50 0 0 1000 250 2
 box 100 0 0 150 250 2
