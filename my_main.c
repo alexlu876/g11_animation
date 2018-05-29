@@ -262,10 +262,15 @@ void my_main() {
 
     for(framec = 0; framec < num_frames; framec++){
       struct vary_node * now = knobs[framec];
+      
       while(now){
-        set_value(lookup_symbol(now->name), now->value);
-        now = now->next;
+        if (!lookup_symbol(now->now))
+        	add_symbol(now->name, SYM_VALUE, &(now->value));
+      else{
+	      set_value(lookup_symbol(now->name),now->value);
+        now=now->next;
       }
+    }
   for (i=0;i<lastop;i++) {
     //printf("%d: ",i);
     switch (op[i].opcode)
