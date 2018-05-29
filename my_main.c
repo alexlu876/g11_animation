@@ -368,6 +368,9 @@ void my_main() {
         if (op[i].op.move.p != NULL)
           {
             printf("\tknob: %s",op[i].op.move.p->name);
+   	    xval*= lookup_symbol(op[i].op.move.p->name)->s.value;
+	    yval*= lookup_symbol(op[i].op.move.p->name)->s.value;
+	    zval*= lookup_symbol(op[i].op.move.p->name)->s.value;
           }
         tmp = make_translate( xval, yval, zval );
         matrix_mult(peek(systems), tmp);
@@ -383,6 +386,9 @@ void my_main() {
         if (op[i].op.scale.p != NULL)
           {
             printf("\tknob: %s",op[i].op.scale.p->name);
+	      xval*= lookup_symbol(op[i].op.scale.p->name)->s.value;
+	      yval*= lookup_symbol(op[i].op.scale.p->name)->s.value;
+	      zval*= lookup_symbol(op[i].op.scale.p->name)->s.value;
           }
         tmp = make_scale( xval, yval, zval );
         matrix_mult(peek(systems), tmp);
@@ -397,6 +403,7 @@ void my_main() {
         if (op[i].op.rotate.p != NULL)
           {
             printf("\tknob: %s",op[i].op.rotate.p->name);
+	    theta*= lookup_symbol(op[i].op.rotate.p->name)->s.value;
           }
         theta*= (M_PI / 180);
         if (op[i].op.rotate.axis == 0 )
