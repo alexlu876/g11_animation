@@ -4,6 +4,7 @@ LDFLAGS= -lm
 CC= gcc
 
 run: parser
+	mkdir anim
 	./mdl simple_anim.mdl
 
 parser: lex.yy.c y.tab.c y.tab.h $(OBJECTS)
@@ -47,3 +48,4 @@ clean:
 	rm lex.yy.c
 	rm -rf mdl.dSYM
 	rm *.o *~
+	rm -rf anim
