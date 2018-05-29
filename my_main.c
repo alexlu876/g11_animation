@@ -440,7 +440,7 @@ void my_main() {
     char name2[12+strlen(name)];
 
     sprintf(name2, "anim/%s%03d.png", name, framec);
-    display(t);
+    //display(t);
     
     save_extension(t,name2);
     clear_screen(t);
@@ -449,7 +449,7 @@ void my_main() {
     tmp=new_matrix(4,1000);
   }//end for loop for all frames
   make_animation(name);
-  /*
+
   else{
 
 printf("num frames = 1\n");
@@ -610,5 +610,5 @@ printf("num frames = 1\n");
       printf("\n");
     }//end operation loop
 }
-*/
+
 }
